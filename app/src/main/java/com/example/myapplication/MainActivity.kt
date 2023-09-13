@@ -6,14 +6,69 @@ import android.view.View
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    /*
+    0 = null
+    1 = +
+    2 = -
+    3 = *
+    4 = /
+    * */
+    var oper : Int = 0
+    var num : Double = 0.0
+    lateinit var tv_num1: TextView
+    lateinit var tv_num2: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        tv_num1 =  findViewById(R.id.tv_1)
+        tv_num2 =  findViewById(R.id.tv_2)
+
     }
+
     // Funcion que recibe un parametro de la vista
     fun onclickDigit(view : View){
-        val tv_num2 : TextView = findViewById(R.id.tv_2)
-        val num2 : Double = tv_num2.text.toString().toDouble()
+        // val tv_num2 : TextView = findViewById(R.id.tv_2)
+        val num2 : String = tv_num2.text.toString()
 
+        when(view.id){
+            R.id.b0 -> tv_num2.setText(num2 + "0")
+            R.id.b1 -> tv_num2.setText(num2 + "1")
+            R.id.b2 -> tv_num2.setText(num2 + "2")
+
+            R.id.b3 -> tv_num2.setText(num2 + "3")
+            R.id.b4 -> tv_num2.setText(num2 + "4")
+            R.id.b5 -> tv_num2.setText(num2 + "5")
+
+            R.id.b6 -> tv_num2.setText(num2 + "6")
+            R.id.b7 -> tv_num2.setText(num2 + "7")
+            R.id.b8 -> tv_num2.setText(num2 + "8")
+            R.id.b9 -> tv_num2.setText(num2 + "9")
+
+            R.id.bpun -> tv_num2.setText(num2 + ".")
+
+        }
+    }
+    fun OnclickOperation(view: View){
+        num = tv_num2.text.toString().toDouble()
+        var num2_Text : String = tv_num2.text.toString()
+        when(view.id){
+            R.id.bplus ->{
+                tv_num1.setText(num2_Text + "+")
+                oper = 1
+            }
+            R.id.bmin ->{
+                tv_num1.setText(num2_Text + "-")
+                oper = 2
+            }
+            R.id.badd ->{
+                tv_num1.setText(num2_Text + "*")
+                oper = 3
+            }
+            R.id.bdiv ->{
+                tv_num1.setText(num2_Text + "/")
+                oper = 4
+            }
+        }
     }
 }
