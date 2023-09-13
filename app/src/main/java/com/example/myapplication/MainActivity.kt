@@ -3,6 +3,7 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     4 = /
     * */
     var oper : Int = 0
-    var num : Double = 0.0
+    var numero1 : Double = 0.0
     lateinit var tv_num1: TextView
     lateinit var tv_num2: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         tv_num1 =  findViewById(R.id.tv_1)
         tv_num2 =  findViewById(R.id.tv_2)
+        val bresult : Button = findViewById(R.id.bresult)
+        val brefresh : Button = findViewById(R.id.brefresh)
+
+        bresult.setOnClickListener{
+            var numero2 : Double = tv_num2.text.toString().toDouble()
+            var  resp: Double = 0.0
+
+            when(oper){
+                1 -> resp = numero1 + numero2
+                2 -> resp = numero1 - numero2
+                3 -> resp = numero1 * numero2
+                4 -> resp = numero1 / numero2
+            }
+
+            tv_num2.setText(resp.toString())
+            tv_num1.setText(resp.toString())
+        }
+
+        brefresh.setOnClickListener{
+            tv_num1.setText("")
+            tv_num2.setText("")
+            numero1 = 0.0
+            oper = 0
+        }
 
     }
 
@@ -50,8 +75,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun OnclickOperation(view: View){
-        num = tv_num2.text.toString().toDouble()
+        numero1 = tv_num2.text.toString().toDouble()
         var num2_Text : String = tv_num2.text.toString()
+        tv_num2.setText("")
         when(view.id){
             R.id.bplus ->{
                 tv_num1.setText(num2_Text + "+")
@@ -62,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 oper = 2
             }
             R.id.badd ->{
-                tv_num1.setText(num2_Text + "*")
+                tv_num1.setText(num2_Text + "x")
                 oper = 3
             }
             R.id.bdiv ->{
