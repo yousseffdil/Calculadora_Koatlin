@@ -1,10 +1,12 @@
 package com.example.myapplication
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         tv_num2 =  findViewById(R.id.tv_2)
         val bresult : Button = findViewById(R.id.bresult)
         val brefresh : Button = findViewById(R.id.brefresh)
-
+        vertificarorientacion();
         bresult.setOnClickListener{
             var numero2 : Double = tv_num2.text.toString().toDouble()
             var  resp: Double = 0.0
@@ -97,4 +99,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun vertificarorientacion(){
+        val orientation = resources.configuration.orientation;
+
+        if(orientation == Configuration.ORIENTATION_LANDSCAPE){
+            setContentView(R.layout.activity_main_horitzontal)
+        }else {
+            setContentView(R.layout.activity_main)
+        }
+    }
+
 }
