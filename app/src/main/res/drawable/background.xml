@@ -1,5 +1,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FF5722" /> <!-- Color de fondo del botón -->
-    <corners android:radius="8dp" /> <!-- Bordes redondeados -->
+    <solid android:color="#505050" />
+    <corners android:radius="8dp" />
     <stroke android:width="10dp"  android:color="@color/white"/>
 </shape>

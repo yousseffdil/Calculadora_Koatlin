@@ -21,14 +21,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var tv_num1: TextView
     lateinit var tv_num2: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         tv_num1 =  findViewById(R.id.tv_1)
         tv_num2 =  findViewById(R.id.tv_2)
-        Direction_Orientation()
+
         val bresult : Button = findViewById(R.id.bresult)
         val brefresh : Button = findViewById(R.id.brefresh)
+
 
         bresult.setOnClickListener{
             var numero2 : Double = tv_num2.text.toString().toDouble()
@@ -41,13 +42,14 @@ class MainActivity : AppCompatActivity() {
                 4 -> resp = numero1 / numero2
             }
 
-            tv_num2.setText(resp.toString())
-            tv_num1.setText(resp.toString())
 
-        //Div / 0
-            //if(resp){
 
-            //}
+            if(resp.isInfinite()){
+                tv_num1.setText("ERROR")
+                tv_num2.setText("No es pot dividir un numero per 0")
+            }else{
+                tv_num1.setText(resp.toString())
+            }
         }
 
         brefresh.setOnClickListener{
@@ -103,15 +105,6 @@ class MainActivity : AppCompatActivity() {
                 tv_num1.setText(num2_Text + "/")
                 oper = 4
             }
-        }
-    }
-
-    private fun Direction_Orientation(){
-        val orientation = resources.configuration.orientation
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE){
-            setContentView(R.layout.activity_main_horitzontal)
-        }else if(orientation == Configuration.ORIENTATION_PORTRAIT){
-            setContentView(R.layout.activity_main)
         }
     }
 }

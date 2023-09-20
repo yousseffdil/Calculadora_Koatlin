@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C1C1C"
+    android:background="@color/Five"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tv_1"
-        android:layout_width="364dp"
-        android:layout_height="120dp"
+        android:layout_width="361dp"
+        android:layout_height="113dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="10dp"
         android:hint="0.0"
         android:textAlignment="textEnd"
         android:textColor="#FFFFFF"
@@ -26,8 +25,8 @@
 
     <TextView
         android:id="@+id/tv_2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="39dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="10dp"
         android:hint="0.0"
@@ -36,7 +35,7 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,19 +43,14 @@
 
     <Button
         android:id="@+id/brefresh"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:backgroundTint="#D4D4D2"
-        android:fontFamily="@font/archivo_black"
         android:text="C"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/bdiv"
         app:layout_constraintEnd_toStartOf="@+id/bdiv"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/CalculatorButtonStyle_Cal"
+        />
 
     <Button
         android:id="@+id/b4"
@@ -71,20 +65,14 @@
 
     <Button
         android:id="@+id/bresult"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#FF9500"
-        android:fontFamily="@font/archivo_black"
-        android:shadowColor="#FF0000"
         android:text="="
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/bpun"
-        app:layout_constraintTop_toBottomOf="@+id/badd" />
+        app:layout_constraintTop_toBottomOf="@+id/badd"
+        style="@style/CalculatorButtonStyle_Cal"
+        />
 
     <Button
         android:id="@+id/b3"
@@ -122,17 +110,10 @@
 
     <Button
         android:id="@+id/bmin"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#FF9500"
-        android:fontFamily="@font/archivo_black"
         android:onClick="OnclickOperation"
-        android:shadowColor="#FF0000"
+        style="@style/CalculatorButtonStyle_Cal"
         android:text="-"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/b6"
@@ -190,21 +171,16 @@
 
     <Button
         android:id="@+id/badd"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#FF9500"
-        android:fontFamily="@font/archivo_black"
         android:onClick="OnclickOperation"
-        android:shadowColor="#FF0000"
         android:text="x"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/b3"
-        app:layout_constraintTop_toBottomOf="@+id/bmin" />
+        app:layout_constraintTop_toBottomOf="@+id/bmin"
+        style="@style/CalculatorButtonStyle_Cal"
+        />
 
     <Button
         android:id="@+id/b9"
@@ -222,14 +198,9 @@
         android:layout_height="80dp"
         android:layout_marginStart="200dp"
         android:layout_marginTop="52dp"
-        android:backgroundTint="#FF9500"
-        android:fontFamily="@font/archivo_black"
         android:onClick="OnclickOperation"
-        android:shadowColor="#FF0000"
         android:text="/"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold"
+        style="@style/CalculatorButtonStyle_Cal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/brefresh"
@@ -248,17 +219,10 @@
 
     <Button
         android:id="@+id/bplus"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#FF9500"
-        android:fontFamily="@font/archivo_black"
         android:onClick="OnclickOperation"
-        android:shadowColor="#FF0000"
+        style="@style/CalculatorButtonStyle_Cal"
         android:text="+"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/b9"

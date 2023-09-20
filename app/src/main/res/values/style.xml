@@ -5,14 +5,26 @@
     <style name="CalculatorButtonStyle">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">30sp</item>
-        <item name="android:backgroundTint">#505050</item>
+        <item name="android:backgroundTint">@color/Third</item>
         <item name="android:layout_height">80dp</item>
         <item name="android:layout_width">80dp</item>
         <item name="android:fontFamily">@font/archivo_black</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:elevation">4dp</item>
         <!--<item name="android:background">@drawable/background</item>-->
+    </style>
+
+    <style name="CalculatorButtonStyle_Cal">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:backgroundTint">@color/Secondary</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:fontFamily">@font/archivo_black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:elevation">4dp</item>
     </style>
 
 </resources>
