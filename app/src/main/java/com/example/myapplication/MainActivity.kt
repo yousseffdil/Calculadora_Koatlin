@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,13 +21,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var tv_num1: TextView
     lateinit var tv_num2: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tv_num1 =  findViewById(R.id.tv_1)
         tv_num2 =  findViewById(R.id.tv_2)
+        Direction_Orientation()
         val bresult : Button = findViewById(R.id.bresult)
         val brefresh : Button = findViewById(R.id.brefresh)
-        vertificarorientacion();
+
         bresult.setOnClickListener{
             var numero2 : Double = tv_num2.text.toString().toDouble()
             var  resp: Double = 0.0
@@ -42,6 +43,11 @@ class MainActivity : AppCompatActivity() {
 
             tv_num2.setText(resp.toString())
             tv_num1.setText(resp.toString())
+
+        //Div / 0
+            //if(resp){
+
+            //}
         }
 
         brefresh.setOnClickListener{
@@ -100,14 +106,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun vertificarorientacion(){
-        val orientation = resources.configuration.orientation;
-
-        if(orientation == Configuration.ORIENTATION_LANDSCAPE){
+    private fun Direction_Orientation(){
+        val orientation = resources.configuration.orientation
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE){
             setContentView(R.layout.activity_main_horitzontal)
-        }else {
+        }else if(orientation == Configuration.ORIENTATION_PORTRAIT){
             setContentView(R.layout.activity_main)
         }
     }
-
 }
